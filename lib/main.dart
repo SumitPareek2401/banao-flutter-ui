@@ -1,4 +1,4 @@
-import 'package:banao_flutter/figma_screen.dart';
+import 'package:banao_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

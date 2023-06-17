@@ -1,3 +1,7 @@
+import 'package:banao_flutter/screens/lessons/lesson_list.dart';
+import 'package:banao_flutter/screens/lessons/main_screen_lesson.dart';
+import 'package:banao_flutter/screens/programs/main_screen_program_list.dart';
+import 'package:banao_flutter/screens/programs/program_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -371,7 +375,16 @@ class ScrollingScreen extends StatelessWidget {
                             width: 10,
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return ProgramList();
+                                  },
+                                ),
+                              );
+                            },
                             child: const Icon(
                               Icons.arrow_right_alt,
                             ),
@@ -379,68 +392,79 @@ class ScrollingScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 16),
-                      SizedBox(
-                        height: 380,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: column1Data.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: 300,
-                              height: 400,
-                              margin: const EdgeInsets.all(8),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 270,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            column1Data[index].image),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    column1Data[index].type,
-                                    style: const TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromARGB(255, 75, 148, 237),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    column1Data[index].text,
-                                    style: const TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 18),
-                                  Text(
-                                    column1Data[index].lessons,
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black45,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
+                      const Card(
+                        elevation: 3,
+                        child: SizedBox(
+                          height: 395,
+                          child: HorizontalProgramList(), //ListView.builder(
+                          // scrollDirection: Axis.horizontal,
+                          // itemCount: column1Data.length,
+                          // itemBuilder: (BuildContext context, int index) {
+                          //   return Card(
+                          //     elevation: 5,
+                          //     child: Card(
+                          //       child: Container(
+                          //         width: 300,
+                          //         height: 400,
+                          //         margin: const EdgeInsets.all(8),
+                          //         child: Column(
+                          //           crossAxisAlignment:
+                          //               CrossAxisAlignment.start,
+                          //           children: [
+                          //             Container(
+                          //               width: 300,
+                          //               height: 200,
+                          //               decoration: BoxDecoration(
+                          //                 borderRadius:
+                          //                     BorderRadius.circular(8),
+                          //                 image: DecorationImage(
+                          //                   image: AssetImage(
+                          //                       column1Data[index].image),
+                          //                   fit: BoxFit.cover,
+                          //                 ),
+                          //               ),
+                          //             ),
+                          //             const SizedBox(height: 8),
+                          //             Text(
+                          //               column1Data[index].type,
+                          //               style: const TextStyle(
+                          //                 fontSize: 15,
+                          //                 fontWeight: FontWeight.bold,
+                          //                 color: Color.fromARGB(
+                          //                     255, 75, 148, 237),
+                          //               ),
+                          //             ),
+                          //             const SizedBox(
+                          //               height: 15,
+                          //             ),
+                          //             Text(
+                          //               column1Data[index].text,
+                          //               style: const TextStyle(
+                          //                 fontSize: 22,
+                          //                 fontWeight: FontWeight.bold,
+                          //               ),
+                          //             ),
+                          //             const SizedBox(height: 18),
+                          //             Text(
+                          //               column1Data[index].lessons,
+                          //               style: const TextStyle(
+                          //                 fontSize: 16,
+                          //                 fontWeight: FontWeight.bold,
+                          //                 color: Colors.black45,
+                          //               ),
+                          //             ),
+                          //           ],
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   );
+                          // },
+                          // ),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 26),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -467,7 +491,16 @@ class ScrollingScreen extends StatelessWidget {
                             width: 10,
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return ProgramList();
+                                  },
+                                ),
+                              );
+                            },
                             child: const Icon(
                               Icons.arrow_right_alt,
                             ),
@@ -475,68 +508,81 @@ class ScrollingScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 8),
-                      SizedBox(
-                        height: 380,
-                        // width: 200,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: column2Data.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: 300,
-                              height: 400,
-                              margin: const EdgeInsets.all(8),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 270,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            column2Data[index].image),
-                                        fit: BoxFit.cover,
-                                      ),
+                      Card(
+                        elevation: 3,
+                        child: SizedBox(
+                          height: 380,
+                          // width: 200,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: column2Data.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Card(
+                                elevation: 5,
+                                child: Card(
+                                  elevation: 2,
+                                  child: Container(
+                                    width: 300,
+                                    height: 400,
+                                    margin: const EdgeInsets.all(8),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 300,
+                                          height: 200,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                  column2Data[index].image),
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          column2Data[index].type,
+                                          style: const TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromARGB(
+                                                255, 75, 148, 237),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        Text(
+                                          column2Data[index].text,
+                                          style: const TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          column2Data[index].lessons,
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black45,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    column2Data[index].type,
-                                    style: const TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromARGB(255, 75, 148, 237),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    column2Data[index].text,
-                                    style: const TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    column2Data[index].lessons,
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black45,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ],
                   ),
+                  const SizedBox(height: 25),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -564,7 +610,16 @@ class ScrollingScreen extends StatelessWidget {
                             width: 10,
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return LessonList();
+                                  },
+                                ),
+                              );
+                            },
                             child: const Icon(
                               Icons.arrow_right_alt,
                             ),
@@ -572,64 +627,75 @@ class ScrollingScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 8),
-                      SizedBox(
-                        height: 380,
-                        // width: 200,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: column2Data.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: 300,
-                              height: 400,
-                              margin: const EdgeInsets.all(8),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 270,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            column3Data[index].image),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    column3Data[index].type,
-                                    style: const TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromARGB(255, 75, 148, 237),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    column3Data[index].text,
-                                    style: const TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    column3Data[index].lessons,
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black45,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
+                      const Card(
+                        elevation: 3,
+                        child: SizedBox(
+                          height: 440,
+                          // width: 200,
+                          child: HorizontalLessonList(), //ListView.builder(
+                          //   scrollDirection: Axis.horizontal,
+                          //   itemCount: column2Data.length,
+                          //   itemBuilder: (BuildContext context, int index) {
+                          //     return Card(
+                          //       elevation: 5,
+                          //       child: Card(
+                          //         child: Container(
+                          //           width: 300,
+                          //           height: 400,
+                          //           margin: const EdgeInsets.all(8),
+                          //           child: Column(
+                          //             crossAxisAlignment:
+                          //                 CrossAxisAlignment.start,
+                          //             children: [
+                          //               Container(
+                          //                 width: 300,
+                          //                 height: 200,
+                          //                 decoration: BoxDecoration(
+                          //                   borderRadius:
+                          //                       BorderRadius.circular(8),
+                          //                   image: DecorationImage(
+                          //                     image: AssetImage(
+                          //                         column3Data[index].image),
+                          //                     fit: BoxFit.cover,
+                          //                   ),
+                          //                 ),
+                          //               ),
+                          //               const SizedBox(height: 8),
+                          //               Text(
+                          //                 column3Data[index].type,
+                          //                 style: const TextStyle(
+                          //                   fontSize: 15,
+                          //                   fontWeight: FontWeight.bold,
+                          //                   color: Color.fromARGB(
+                          //                       255, 75, 148, 237),
+                          //                 ),
+                          //               ),
+                          //               const SizedBox(
+                          //                 height: 15,
+                          //               ),
+                          //               Text(
+                          //                 column3Data[index].text,
+                          //                 style: const TextStyle(
+                          //                   fontSize: 22,
+                          //                   fontWeight: FontWeight.bold,
+                          //                 ),
+                          //               ),
+                          //               const SizedBox(height: 8),
+                          //               Text(
+                          //                 column3Data[index].lessons,
+                          //                 style: const TextStyle(
+                          //                   fontSize: 16,
+                          //                   fontWeight: FontWeight.bold,
+                          //                   color: Colors.black45,
+                          //                 ),
+                          //               ),
+                          //             ],
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     );
+                          //   },
+                          // ),
                         ),
                       ),
                     ],
@@ -640,30 +706,81 @@ class ScrollingScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+      bottomNavigationBar: const BottomNavBar(),
+    );
+  }
+}
+
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
+  @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _selectIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      currentIndex: _selectIndex,
+      type: BottomNavigationBarType.fixed,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.home_outlined,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book_rounded),
-            label: 'Learn',
+          label: 'Home',
+          activeIcon: Icon(
+            Icons.home,
+            size: 33,
+            color: Colors.cyan,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.grid_view),
-            label: 'Hub',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.menu_book_rounded,
           ),
-          // BottomNavigationBarItem(
-          // icon: Icon(Icons.man),
-          // label: 'Chat',
-          // ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.settings),
-          //   label: 'Profile',
-          // ),
-        ],
-      ),
+          label: 'Learn',
+          activeIcon: Icon(
+            Icons.menu_book,
+            size: 33,
+            color: Colors.cyan,
+          ),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.grid_view_outlined),
+          label: 'Hub',
+          activeIcon: Icon(
+            Icons.grid_view,
+            size: 33,
+            color: Colors.cyan,
+          ),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.messenger),
+          label: 'Chat',
+          activeIcon: Icon(
+            Icons.chat,
+            color: Colors.cyan,
+            size: 33,
+          ),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.settings_outlined),
+          label: 'Profile',
+          activeIcon: Icon(
+            Icons.settings,
+            size: 33,
+            color: Colors.cyan,
+          ),
+        ),
+      ],
+      onTap: (index) {
+        setState(() {
+          _selectIndex = index;
+        });
+      },
     );
   }
 }
